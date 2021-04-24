@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var GLOBAL = require('../global')
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, ()=>{
     console.log(`Octo-Blog started in port ${port}`);
