@@ -1,0 +1,30 @@
+User
+    1. user_id - int - auto_increment - primary_key
+    2. username/handle - text - 25chars - unique - not_null
+    3. password - enc_text - min 8 chars with complexity - not_null
+    4. mail_id - text - unique - not_null
+    5. FirstName - text - not_null
+    6. LastName - text - not_null
+    7. Tagline/Description - text
+    8. ProfileImage/Avatar - text - stores the location of the image
+    9. creation_time - datetime - not_null
+
+Blog_Posts
+    1. post_id - auto_increment - primary_key
+    2. post_title - text - 200 chars - unique - not_null
+    3. post_content - text - not_null
+    4. post_creation_time - datetime - not_null
+    5. is_modified - enum
+    6. last_modified_time - datetime
+
+Votes
+    1. vote_id - auto_increment - primary_key
+    2. post_id - foreign_key from Blog_Posts
+    3. Vote_Type - enum - (0/1) - upvote/downvote
+    4. user_id - foreign_key from User
+
+Comments - need to support nested comments later
+    1. comment_id - auto_increment - primary_key
+    2. post_id - foreign_key from Blog_Posts
+    3. user_id - foreign_key from User
+    4. comment_content - text - not_null
