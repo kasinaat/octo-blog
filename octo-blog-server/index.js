@@ -1,11 +1,13 @@
 var express = require('express');
+var db = require('./database/connectDB');
+require('dotenv').config();
 var path = require('path');
 var bodyParser = require('body-parser');
 var GLOBAL = require('../global')
 const app = express();
 
 const port = process.env.PORT || 5000;
-
+db.connect(process.env.db_pass);
 app.listen(port, ()=>{
     console.log(`Octo-Blog started in port ${port}`);
 });
