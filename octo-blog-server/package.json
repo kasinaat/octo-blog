@@ -4,20 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./index.js",
     "start": "node index",
+    "test": "mocha --reporter spec",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ../octo-blog-client && npm run build --prefix ../octo-blog-client"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "chai": "^4.3.4",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.5"
+    "mongoose": "^5.12.5",
+    "request": "^2.88.2"
   },
   "devDependencies": {
+    "chai-http": "^4.3.0",
     "mocha": "^8.3.2",
     "nodemon": "^2.0.7"
   }

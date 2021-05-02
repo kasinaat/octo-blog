@@ -1,3 +1,4 @@
 /octo-blog-server/node_modules
 /octo-blog-client/node_modules
 /octo-blog-client/.gitignore
+.env
